@@ -1,115 +1,96 @@
-"use client"
-
-import { useState } from "react"
-import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-
-const projects = [
-  {
-    id: 1,
-    title: "E-commerce Dashboard",
-    description: "A responsive dashboard for an e-commerce platform with data visualization and user management.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Tailwind CSS", "Chart.js"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 2,
-    title: "Weather App",
-    description: "A weather application that displays current and forecasted weather data based on user location.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["JavaScript", "API Integration", "CSS3"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Task Management Tool",
-    description: "A drag-and-drop task management application with user authentication and real-time updates.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Firebase", "Styled Components"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-]
+import AnimateInView from "./animate-in-view"
 
 export default function Projects() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const projects = [
+    {
+      title: "E-commerce Website",
+      description: "A responsive e-commerce site built with React and Tailwind CSS.",
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      imageUrl: "/placeholder.svg?height=600&width=800",
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Weather Dashboard",
+      description: "Real-time weather application that fetches data from a weather API.",
+      tags: ["React", "API Integration", "CSS"],
+      imageUrl: "/placeholder.svg?height=600&width=800",
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Task Management App",
+      description: "A productivity tool to manage daily tasks with local storage.",
+      tags: ["JavaScript", "HTML", "CSS"],
+      imageUrl: "/placeholder.svg?height=600&width=800",
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+  ]
 
   return (
-    <section id="projects" className="py-12">
-      <div className="container px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-8 text-center"
-        >
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">My Projects</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Here are some of my recent projects that showcase my skills and experience.
-          </p>
-        </motion.div>
+    <section id="portfolio" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <AnimateInView animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My Projects</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Here are some of my recent projects that showcase my skills and approach to problem-solving.
+            </p>
+          </div>
+        </AnimateInView>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
+            <AnimateInView
+              key={index}
+              animation={index % 2 === 0 ? "slide-in-left" : "slide-in-right"}
+              delay={index * 150}
             >
-              <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg">
-                <div className="relative overflow-hidden">
-                  <div
-                    className="aspect-video w-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${project.image})` }}
+              <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={project.imageUrl || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <motion.div
-                    className="absolute inset-0 bg-primary/80 flex items-center justify-center"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="flex gap-4">
-                      <Button size="sm" variant="secondary" asChild>
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Live Demo
-                        </a>
-                      </Button>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </a>
-                      </Button>
-                    </div>
-                  </motion.div>
                 </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full transition-colors duration-300 hover:bg-gray-200"
+                      >
                         {tag}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
-                </CardFooter>
-              </Card>
-            </motion.div>
+                  <div className="flex gap-3">
+                    <Link
+                      href={project.liveUrl}
+                      className="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-300"
+                    >
+                      <ExternalLink size={18} className="mr-1" />
+                      <span>Live Demo</span>
+                    </Link>
+                    <Link
+                      href={project.githubUrl}
+                      className="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-300"
+                    >
+                      <Github size={18} className="mr-1" />
+                      <span>Code</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </AnimateInView>
           ))}
         </div>
       </div>

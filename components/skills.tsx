@@ -1,92 +1,64 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { Code, Layout, Database, Server, Palette, Layers } from "lucide-react"
-
-const skills = [
-  {
-    icon: <Code className="h-8 w-8" />,
-    title: "Frontend Development",
-    description: "HTML5, CSS3, JavaScript, TypeScript",
-  },
-  {
-    icon: <Layout className="h-8 w-8" />,
-    title: "UI Frameworks",
-    description: "React, Next.js, Vue.js",
-  },
-  {
-    icon: <Palette className="h-8 w-8" />,
-    title: "CSS Frameworks",
-    description: "Tailwind CSS, Bootstrap, Styled Components",
-  },
-  {
-    icon: <Layers className="h-8 w-8" />,
-    title: "State Management",
-    description: "Redux, Context API, Zustand",
-  },
-  {
-    icon: <Database className="h-8 w-8" />,
-    title: "API Integration",
-    description: "REST, GraphQL, Axios, SWR",
-  },
-  {
-    icon: <Server className="h-8 w-8" />,
-    title: "Tools & Deployment",
-    description: "Git, Webpack, Vercel, Netlify",
-  },
-]
+import { Code, PenTool, Layout, Database, Briefcase, GitBranch } from "lucide-react"
+import AnimateInView from "./animate-in-view"
 
 export default function Skills() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+  const skills = [
+    {
+      title: "HTML & CSS",
+      icon: <Layout className="w-10 h-10 text-gray-700" />,
+      description: "Creating semantic markup and responsive designs with modern CSS techniques.",
     },
-  }
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+    {
+      title: "JavaScript",
+      icon: <Code className="w-10 h-10 text-gray-700" />,
+      description: "Building interactive experiences with vanilla JS and modern ES6+ features.",
+    },
+    {
+      title: "React.js",
+      icon: <PenTool className="w-10 h-10 text-gray-700" />,
+      description: "Developing component-based UIs with React hooks and context.",
+    },
+    {
+      title: "Tailwind CSS",
+      icon: <Briefcase className="w-10 h-10 text-gray-700" />,
+      description: "Styling applications efficiently with utility-first approach.",
+    },
+    {
+      title: "Git & GitHub",
+      icon: <GitBranch className="w-10 h-10 text-gray-700" />,
+      description: "Version control and collaborative development workflows.",
+    },
+    {
+      title: "RESTful APIs",
+      icon: <Database className="w-10 h-10 text-gray-700" />,
+      description: "Consuming and integrating APIs to build dynamic applications.",
+    },
+  ]
 
   return (
-    <section id="skills" className="bg-secondary/30 py-20">
-      <div className="container px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">My Skills</h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            Here are the technologies and tools I work with to build modern web applications.
-          </p>
-        </motion.div>
+    <section id="skills" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <AnimateInView animation="fade-up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">My Skills</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              I've developed a strong foundation in frontend technologies, focusing on creating responsive and
+              accessible web experiences.
+            </p>
+          </div>
+        </AnimateInView>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
-            <motion.div key={index} variants={item}>
-              <div className="group rounded-lg border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground">
-                  {skill.icon}
-                </div>
-                <h3 className="mb-2 text-xl font-bold">{skill.title}</h3>
-                <p className="text-muted-foreground">{skill.description}</p>
+            <AnimateInView key={index} animation="fade-up" delay={index * 100}>
+              <div className="bg-gray-50 rounded-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-md">
+                <div className="mb-4 transform transition-transform duration-300 hover:scale-110">{skill.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{skill.title}</h3>
+                <p className="text-gray-600">{skill.description}</p>
               </div>
-            </motion.div>
+            </AnimateInView>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

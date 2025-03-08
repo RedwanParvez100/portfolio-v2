@@ -1,22 +1,19 @@
-import type { Metadata } from "next"
+import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
-import Projects from "@/components/projects"
 import Skills from "@/components/skills"
+import Projects from "@/components/projects"
+import About from "@/components/about"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
-export const metadata: Metadata = {
-  title: "Alex Johnson - Frontend Developer Portfolio",
-  description:
-    "Portfolio website for Alex Johnson, a passionate frontend developer crafting beautiful and functional web experiences.",
-}
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
+      <Navbar />
       <Hero />
-      <Projects />
       <Skills />
+      <Projects />
+      <About />
       <Contact />
       <Footer />
     </main>

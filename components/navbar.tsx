@@ -2,84 +2,120 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setScrolled(window.scrollY > 10)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-neutral-100/80 backdrop-blur-md shadow-sm" : "bg-neutral-100/50"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-white/90"}`}
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="hidden md:flex md:gap-10">
-          <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <Link
+          href="/"
+          className="text-xl font-bold text-gray-800 transition-all duration-300 hover:scale-105 transform"
+        >
+          DevPortfolio
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-10">
+          <Link
+            href="#home"
+            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
+          >
             Home
           </Link>
-          <Link href="#skills" className="text-foreground/80 hover:text-foreground transition-colors">
+          <Link
+            href="#skills"
+            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
+          >
             Skills
           </Link>
-          <Link href="#" className="text-foreground/80 hover:text-foreground transition-colors">
+          <Link
+            href="#about"
+            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
+          >
             About
           </Link>
-          <Link href="#projects" className="text-foreground/80 hover:text-foreground transition-colors">
+          <Link
+            href="#portfolio"
+            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
+          >
             Portfolio
+          </Link>
+        </nav>
+
+        <div className="hidden md:block">
+          <Link
+            href="#contact"
+            className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-all duration-300 hover:scale-105 transform"
+          >
+            Contact Me
           </Link>
         </div>
 
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMobileMenu}>
-          <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
-        </Button>
+        {/* Mobile Navigation Button */}
+        <button
+          className="md:hidden text-gray-700 transition-transform duration-300 hover:scale-110"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu size={24} />
+        </button>
+      </div>
 
-        {isMobileMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background border-b md:hidden">
-            <nav className="flex flex-col p-4">
-              <Link href="#" className="py-2 text-foreground/80 hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <Link href="#skills" className="py-2 text-foreground/80 hover:text-foreground transition-colors">
-                Skills
-              </Link>
-              <Link href="#" className="py-2 text-foreground/80 hover:text-foreground transition-colors">
-                About
-              </Link>
-              <Link href="#projects" className="py-2 text-foreground/80 hover:text-foreground transition-colors">
-                Portfolio
-              </Link>
-              <Link href="#contact">
-                <Button className="w-full mt-4">Contact Me</Button>
-              </Link>
-            </nav>
-          </div>
-        )}
-
-        <div className="hidden md:block">
-          <Link href="#contact">
-            <Button variant="outline" className="rounded-md border-foreground/20">
-              Contact Me
-            </Button>
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`md:hidden bg-white py-4 shadow-md overflow-hidden transition-all duration-300 ${
+          isMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="container mx-auto px-4 flex flex-col space-y-4">
+          <Link
+            href="#home"
+            className="text-gray-700 hover:text-gray-900 font-medium py-2 transition-all duration-300 hover:translate-x-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            href="#skills"
+            className="text-gray-700 hover:text-gray-900 font-medium py-2 transition-all duration-300 hover:translate-x-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Skills
+          </Link>
+          <Link
+            href="#about"
+            className="text-gray-700 hover:text-gray-900 font-medium py-2 transition-all duration-300 hover:translate-x-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About
+          </Link>
+          <Link
+            href="#portfolio"
+            className="text-gray-700 hover:text-gray-900 font-medium py-2 transition-all duration-300 hover:translate-x-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Portfolio
+          </Link>
+          <Link
+            href="#contact"
+            className="text-gray-700 hover:text-gray-900 font-medium py-2 transition-all duration-300 hover:translate-x-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact Me
           </Link>
         </div>
       </div>
