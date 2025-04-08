@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowDown } from "lucide-react"
 import AnimateInView from "./animate-in-view"
+import heroImg from "../public/images/1st.png"
 
 export default function Hero() {
   return (
@@ -13,20 +14,19 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <AnimateInView animation="fade-in" delay={100}>
-              <p className="text-gray-500 mb-2">Hello, I'm</p>
+              <p className="text-gray-500 mb-2 text-xl">Hello, I'm</p>
             </AnimateInView>
             <AnimateInView animation="slide-in-left" delay={200}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">John Doe</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-4 text-gray-800">Redwan Parvez</h1>
             </AnimateInView>
             <AnimateInView animation="slide-in-left" delay={300}>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-600 font-medium mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-3xl text-gray-600 font-medium mb-6">
                 Junior Frontend Developer
               </h2>
             </AnimateInView>
             <AnimateInView animation="fade-up" delay={400}>
               <p className="text-gray-600 mb-8 text-lg max-w-lg">
-                I create responsive websites with modern technologies, bringing designs to life with clean, efficient
-                code.
+              I enjoy building clean, responsive websites and web apps using modern tools like React, Tailwind CSS, and JavaScript. I love learning new things and turning ideas into user-friendly digital experiences.
               </p>
             </AnimateInView>
             <AnimateInView animation="fade-up" delay={500}>
@@ -48,10 +48,10 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <AnimateInView animation="zoom-in" delay={600}>
-              <div className="relative w-[280px] h-[380px] md:w-[320px] md:h-[420px] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative w-[310px] h-[410px] md:w-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
                 <Image
-                  src="/placeholder.svg?height=1200&width=800" // Replace with your image
-                  alt="John Doe - Frontend Developer"
+                  src={heroImg} // Replace with your image
+                  alt="Redwan Parvez - Frontend Developer"
                   fill
                   className="object-cover object-center"
                   priority

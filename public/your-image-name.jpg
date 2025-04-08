@@ -1,4 +1,0 @@
-const profileImage = "/placeholder.svg";
-
-export default profileImage;
-
