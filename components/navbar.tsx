@@ -44,16 +44,16 @@ export default function Navbar() {
             Skills
           </Link>
           <Link
+            href="#projects"
+            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
+          >
+             Projects
+          </Link>
+          <Link
             href="#about"
             className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
           >
-            About
-          </Link>
-          <Link
-            href="#portfolio"
-            className="text-gray-700 hover:text-gray-900 font-medium transition-all duration-300 hover:scale-105 transform"
-          >
-            Portfolio
+           About
           </Link>
         </nav>
 

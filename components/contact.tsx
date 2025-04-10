@@ -55,10 +55,10 @@ export default function Contact() {
                   <div>
                     <h4 className="text-gray-700 font-medium">Email</h4>
                     <a
-                      href="mailto:johndoe@example.com"
+                      href="mailto:redwanparvez100@gmail.com"
                       className="text-gray-600 hover:text-gray-800 transition-colors"
                     >
-                      johndoe@example.com
+                      redwanparvez100@gmail.com
                     </a>
                   </div>
                 </div>
@@ -68,7 +68,7 @@ export default function Contact() {
                   <div>
                     <h4 className="text-gray-700 font-medium">Phone</h4>
                     <a href="tel:+1234567890" className="text-gray-600 hover:text-gray-800 transition-colors">
-                      (123) 456-7890
+                      01935-773386
                     </a>
                   </div>
                 </div>
@@ -77,7 +77,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-gray-700 mt-1 mr-3 transition-transform duration-300 group-hover:scale-110" />
                   <div>
                     <h4 className="text-gray-700 font-medium">Location</h4>
-                    <p className="text-gray-600">San Francisco, CA</p>
+                    <p className="text-gray-600">Mirpur-01, Dhaka-1216</p>
                   </div>
                 </div>
               </div>
