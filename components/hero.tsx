@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, Github } from "lucide-react"
 import AnimateInView from "./animate-in-view"
 import heroImg from "../public/images/1st.png"
 
@@ -32,16 +32,21 @@ export default function Hero() {
             <AnimateInView animation="fade-up" delay={500}>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="#portfolio"
-                  className="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-all duration-300 hover:scale-105 transform"
+                  href="https://github.com/RedwanParvez100"
+                  className="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-800 transition-all duration-300 hover:scale-105 transform flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+               
                 >
-                  View My Work
+                  <Github size={20} className="mr-2" />
+                  Explore Code Universe
                 </Link>
                 <Link
-                  href="#contact"
+                  href="https://drive.google.com/drive/u/0/folders/1vfjbNM3nyCUWVx8gtdZzZWrSlIunxscz"
                   className="px-6 py-3 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-100 transition-all duration-300 hover:scale-105 transform"
+                  target="_blank"
                 >
-                  Contact Me
+                  Let's Connect
                 </Link>
               </div>
             </AnimateInView>

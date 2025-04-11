@@ -62,7 +62,7 @@ export default function Navbar() {
             href="#contact"
             className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-all duration-300 hover:scale-105 transform"
           >
-            Contact Me
+           Get In Touch
           </Link>
         </div>
 
