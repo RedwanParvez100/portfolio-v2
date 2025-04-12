@@ -2,6 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
 import AnimateInView from "./animate-in-view"
+import prj2 from "../public/images/Project2.png"
+import prj3 from "../public/images/Project3.png"
+
 
 export default function Projects() {
   const projects = [
@@ -14,18 +17,18 @@ export default function Projects() {
       githubUrl: "#",
     },
     {
-      title: "Weather Dashboard",
+      title: "Mediusware-Website",
       description: "Real-time weather application that fetches data from a weather API.",
       tags: ["React", "API Integration", "CSS"],
-      imageUrl: "/placeholder.svg?height=600&width=800",
+      imageUrl: prj2,
       liveUrl: "#",
       githubUrl: "#",
     },
     {
-      title: "Task Management App",
+      title: "Train-Ticket-Reservation-System",
       description: "A productivity tool to manage daily tasks with local storage.",
       tags: ["JavaScript", "HTML", "CSS"],
-      imageUrl: "/placeholder.svg?height=600&width=800",
+      imageUrl: prj3,
       liveUrl: "#",
       githubUrl: "#",
     },
@@ -51,12 +54,12 @@ export default function Projects() {
               delay={index * 150}
             >
               <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className="relative h-80 w-65 overflow-hidden">
                   <Image
                     src={project.imageUrl || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="p-6">

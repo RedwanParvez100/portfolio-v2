@@ -4,9 +4,14 @@ import AnimateInView from "./animate-in-view"
 export default function Skills() {
   const skills = [
     {
-      title: "HTML & CSS",
+      title: "HTML5 & CSS",
       icon: <Layout className="w-10 h-10 text-gray-700" />,
       description: "Creating semantic markup and responsive designs with modern CSS techniques.",
+    },
+    {
+      title: "Tailwind CSS",
+      icon: <Briefcase className="w-10 h-10 text-gray-700" />,
+      description: "Styling applications efficiently with utility-first approach.",
     },
     {
       title: "JavaScript",
@@ -18,11 +23,7 @@ export default function Skills() {
       icon: <PenTool className="w-10 h-10 text-gray-700" />,
       description: "Developing component-based UIs with React hooks and context.",
     },
-    {
-      title: "Tailwind CSS",
-      icon: <Briefcase className="w-10 h-10 text-gray-700" />,
-      description: "Styling applications efficiently with utility-first approach.",
-    },
+   
     {
       title: "Git & GitHub",
       icon: <GitBranch className="w-10 h-10 text-gray-700" />,
