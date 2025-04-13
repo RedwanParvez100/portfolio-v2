@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
 import AnimateInView from "./animate-in-view"
+import prj1 from "../public/images/Project1.png"
 import prj2 from "../public/images/Project2.png"
 import prj3 from "../public/images/Project3.png"
 
@@ -10,27 +11,27 @@ export default function Projects() {
   const projects = [
     {
       title: "E-commerce Website",
-      description: "A responsive e-commerce site built with React and Tailwind CSS.",
-      tags: ["React", "Tailwind CSS", "JavaScript"],
-      imageUrl: "/placeholder.svg?height=600&width=800",
+      description: "A full-stack e-commerce website using the MERN stack where users can browse products, add them to cart, and make secure payments. It includes features like user authentication, admin product management, and order tracking.",
+      tags: ["Tailwind CSS", "JavaScript", "React", "Express", "Node.js", "MongoDB"],
+      imageUrl: prj1,
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/RedwanParvez100/e-commerce",
     },
     {
       title: "Mediusware-Website",
-      description: "Real-time weather application that fetches data from a weather API.",
-      tags: ["React", "API Integration", "CSS"],
+      description: "A responsive company webpage for Mediusware Ltd using React and Tailwind CSS. The site features clean design, smooth navigation, and effectively showcases company services.",
+      tags: ["Tailwind CSS", "React"],
       imageUrl: prj2,
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://mediusware-page-design.netlify.app/",
+      githubUrl: "https://github.com/RedwanParvez100/mediusware-web",
     },
     {
       title: "Train-Ticket-Reservation-System",
-      description: "A productivity tool to manage daily tasks with local storage.",
-      tags: ["JavaScript", "HTML", "CSS"],
+      description: "A train ticket reservation system where users can sign up, log in, view train details like routes, schedules, and fares, and purchase tickets online. It provides a smooth and easy way to book train tickets.",
+      tags: ["Java", "MySql"],
       imageUrl: prj3,
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/RedwanParvez100/Train-Ticket-Reservation-System",
     },
   ]
 
@@ -53,8 +54,8 @@ export default function Projects() {
               animation={index % 2 === 0 ? "slide-in-left" : "slide-in-right"}
               delay={index * 150}
             >
-              <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
-                <div className="relative h-80 w-65 overflow-hidden">
+              <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group h-full">
+                <div className="relative h-72 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl || "/placeholder.svg"}
                     alt={project.title}
@@ -77,6 +78,7 @@ export default function Projects() {
                   </div>
                   <div className="flex gap-3">
                     <Link
+                      target="_blank"
                       href={project.liveUrl}
                       className="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-300"
                     >
@@ -84,6 +86,7 @@ export default function Projects() {
                       <span>Live Demo</span>
                     </Link>
                     <Link
+                      target="_blank"
                       href={project.githubUrl}
                       className="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-300"
                     >
