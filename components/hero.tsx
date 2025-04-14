@@ -25,7 +25,7 @@ export default function Hero() {
               </h2>
             </AnimateInView>
             <AnimateInView animation="fade-up" delay={400}>
-              <p className="text-gray-600 mb-8 text-lg max-w-lg">
+              <p className="text-gray-600 mb-8 text-lg max-w-lg text-justify">
               I enjoy building clean, responsive websites and web apps using modern tools like React, Tailwind CSS, and JavaScript. I love learning new things and turning ideas into user-friendly digital experiences.
               </p>
             </AnimateInView>
@@ -41,13 +41,13 @@ export default function Hero() {
                   <Github size={20} className="mr-2" />
                   Explore Code Universe
                 </Link>
-                <Link
+                {/* <Link
                   href="https://drive.google.com/drive/u/0/folders/1vfjbNM3nyCUWVx8gtdZzZWrSlIunxscz"
                   className="px-6 py-3 border border-gray-800 text-gray-800 rounded-md hover:bg-gray-100 transition-all duration-300 hover:scale-105 transform"
                   target="_blank"
                 >
                   Let's Connect
-                </Link>
+                </Link> */}
               </div>
             </AnimateInView>
           </div>

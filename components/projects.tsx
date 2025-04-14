@@ -11,7 +11,8 @@ export default function Projects() {
   const projects = [
     {
       title: "E-commerce Website",
-      description: "A full-stack e-commerce website using the MERN stack where users can browse products, add them to cart, and make secure payments. It includes features like user authentication, admin product management, and order tracking.",
+      description:
+        "A full-stack e-commerce website using the MERN stack where users can browse products, add them to cart, and make secure payments. It includes features like user authentication, admin product management, and order tracking.",
       tags: ["Tailwind CSS", "JavaScript", "React", "Express", "Node.js", "MongoDB"],
       imageUrl: prj1,
       liveUrl: "#",
@@ -19,7 +20,8 @@ export default function Projects() {
     },
     {
       title: "Mediusware-Website",
-      description: "A responsive company webpage for Mediusware Ltd using React and Tailwind CSS. The site features clean design, smooth navigation, and effectively showcases company services.",
+      description:
+        "A responsive company webpage for Mediusware Ltd using React and Tailwind CSS. The site features clean design, smooth navigation, and effectively showcases company services.",
       tags: ["Tailwind CSS", "React"],
       imageUrl: prj2,
       liveUrl: "https://mediusware-page-design.netlify.app/",
@@ -27,7 +29,8 @@ export default function Projects() {
     },
     {
       title: "Train-Ticket-Reservation-System",
-      description: "A train ticket reservation system where users can sign up, log in, view train details like routes, schedules, and fares, and purchase tickets online. It provides a smooth and easy way to book train tickets.",
+      description:
+        "A train ticket reservation system where users can sign up, log in, view train details like routes, schedules, and fares, and purchase tickets online. It provides a smooth and easy way to book train tickets.",
       tags: ["Java", "MySql"],
       imageUrl: prj3,
       liveUrl: "#",
@@ -54,8 +57,8 @@ export default function Projects() {
               animation={index % 2 === 0 ? "slide-in-left" : "slide-in-right"}
               delay={index * 150}
             >
-              <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group h-full">
-                <div className="relative h-72 w-full overflow-hidden">
+              <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group h-full flex flex-col">
+                <div className="relative h-80 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl || "/placeholder.svg"}
                     alt={project.title}
@@ -63,9 +66,9 @@ export default function Projects() {
                     className="transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-600 mb-4 flex-grow leading-relaxed text-justify">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, idx) => (
                       <span
@@ -76,7 +79,7 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 mt-auto">
                     <Link
                       target="_blank"
                       href={project.liveUrl}
@@ -103,4 +106,3 @@ export default function Projects() {
     </section>
   )
 }
-

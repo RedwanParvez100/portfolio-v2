@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contact"
-            className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-all duration-300 hover:scale-105 transform"
+            className="px-6 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-800 hover:text-white transition-all duration-300 hover:scale-105 transform"
           >
            Get In Touch
           </Link>
