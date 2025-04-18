@@ -26,22 +26,23 @@ export default function About() {
 
                     <AnimateInView animation="fade-up" delay={200}>
                         <p className="text-gray-600 mb-6 text-justify">
-                            I'm a junior frontend developer with a passion for
-                            creating beautiful and functional web experiences. I
-                            completed my BSc in Computer Science and Engineering
-                            with a major in Software Engineering in April 2024.
-                            Then I did a 3 months MERN stack internship at
-                            Mediusware Ltd, where I worked on real-time projects
-                            using modern web technologies. Now, I’m focusing on
-                            frontend development and building projects with
-                            React and JavaScript to improve my skills.
+                            I&apos;m a junior frontend developer with a passion
+                            for creating beautiful and functional web
+                            experiences. I completed my BSc in Computer Science
+                            and Engineering with a major in Software Engineering
+                            in April 2024. Then I did a 3 months MERN stack
+                            internship at Mediusware Ltd, where I worked on
+                            real-time projects using modern web technologies.
+                            Now, I’m focusing on frontend development and
+                            building projects with React and JavaScript to
+                            improve my skills.
                         </p>
                     </AnimateInView>
 
                     <AnimateInView animation="fade-up" delay={300}>
                         <p className="text-gray-600 mb-6">
-                            I'm particularly interested in responsive design,
-                            accessibility, and creating intuitive user
+                            I&apos;m particularly interested in responsive
+                            design, accessibility, and creating intuitive user
                             interfaces. My goal is to write clean, maintainable
                             code that provides great user experiences across all
                             devices.
