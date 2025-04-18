@@ -58,7 +58,7 @@ export default function Skills() {
                             My Skills
                         </h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
-                            I've developed a strong foundation in frontend
+                            I&apos;ve developed a strong foundation in frontend
                             technologies, focusing on creating responsive and
                             accessible web experiences.
                         </p>
