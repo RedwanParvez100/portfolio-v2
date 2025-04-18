@@ -30,11 +30,11 @@ export default function Footer() {
                     <AnimateInView animation="fade-up">
                         <div className="max-w-3xl mx-auto text-center mb-8">
                             <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                                Let's Build Something Amazing Together
+                                Let&apos;s Build Something Amazing Together
                             </h2>
                             <p className="text-gray-400 mb-6 text-sm md:text-base">
-                                Whether you're building something new or
-                                improving an existing product, I'm always
+                                Whether you&apos;re building something new or
+                                improving an existing product, I&apos;m always
                                 excited to collaborate on impactful projects.
                             </p>
                             <Link
