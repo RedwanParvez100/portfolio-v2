@@ -14,7 +14,7 @@ export default function Hero() {
                 <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-1/2 mb-10 md:mb-0">
                         <AnimateInView animation="fade-in" delay={100}>
-                            <p className="text-gray-500 mb-2 text-xl">
+                            <p className="text-gray-500 mb-2 text-2xl">
                                 Hello, I&apos;m
                             </p>
                         </AnimateInView>
@@ -68,7 +68,7 @@ export default function Hero() {
                     </div>
                     <div className="md:w-1/2 flex justify-center">
                         <AnimateInView animation="zoom-in" delay={600}>
-                            <div className="relative w-[310px] h-[410px] md:w-[305px] md:h-[405px] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
+                            <div className="relative w-[310px] h-[410px] md:w-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
                                 <Image
                                     src={heroImg} // Img Section
                                     alt="Redwan Parvez - Frontend Developer"
