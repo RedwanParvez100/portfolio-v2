@@ -21,7 +21,7 @@ export default function Projects() {
                 "MongoDB",
             ],
             imageUrl: prj1,
-            liveUrl: "#",
+            liveUrl: "https://e-commerce-frontend-lemon-sigma.vercel.app/",
             githubUrl: "https://github.com/RedwanParvez100/e-commerce",
         },
         {
