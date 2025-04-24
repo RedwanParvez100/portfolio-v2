@@ -36,10 +36,10 @@ export default function Projects() {
         {
             title: "System-monitor-ui",
             description:
-                "The Nexus OS Dashboard offers a real-time overview of system health and performance, showcasing key metrics like CPU, memory, network, and storage in a sleek, user-friendly interface. Designed as a frontend-only project, it emphasizes clarity, responsiveness, and modern UI design.",
+                "The Nexus OS Dashboard offers a real-time overview of system health and performance, showcasing key metrics like CPU, memory, network, and storage in a sleek, user-friendly interface.",
             tags: ["TypeScript", "JavaScript" , "Tailwind CSS"],
             imageUrl: prj3,
-            liveUrl: "#",
+            liveUrl: "https://system-monitor-ui.vercel.app/",
             githubUrl:
                 "https://github.com/RedwanParvez100/system-monitor-ui",
         },
