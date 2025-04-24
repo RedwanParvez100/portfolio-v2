@@ -34,14 +34,14 @@ export default function Projects() {
             githubUrl: "https://github.com/RedwanParvez100/mediusware-web",
         },
         {
-            title: "Train-Ticket-Reservation-System",
+            title: "System-monitor-ui",
             description:
-                "A train ticket reservation system where users can sign up, log in, view train details like routes, schedules, and fares, and purchase tickets online. It provides a smooth and easy way to book train tickets.",
-            tags: ["Java", "MySql"],
+                "The Nexus OS Dashboard offers a real-time overview of system health and performance, showcasing key metrics like CPU, memory, network, and storage in a sleek, user-friendly interface. Designed as a frontend-only project, it emphasizes clarity, responsiveness, and modern UI design.",
+            tags: ["TypeScript", "JavaScript" , "Tailwind CSS"],
             imageUrl: prj3,
             liveUrl: "#",
             githubUrl:
-                "https://github.com/RedwanParvez100/Train-Ticket-Reservation-System",
+                "https://github.com/RedwanParvez100/system-monitor-ui",
         },
     ];
 
